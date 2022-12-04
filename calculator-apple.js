@@ -157,8 +157,8 @@ function addDecimal(num) {
     if (wasEqualed) num = null
     num ??= 0;
     num += '.';
-    num = isNegative ? `-${num}` : `${num}`
-    display.innerHTML = `${Object.is(num, -0) ? '-0.' : format(num) == 0 ? num : format(num)} `;
+    // num = isNegative ? `-${num}` : `${num}`
+    display.innerHTML = `${Object.is(num, -0) ? '-0.' : format(num) == 0 ? num : format(num) + '.'} `;
     wasEqualed = false;
     return num
 }
@@ -233,6 +233,5 @@ function clearAll() {
     tempOperator = '';
     display.innerHTML = 0;
     isNegative = false;
-    hasDecimal = false;
     wasEqualed = false;
 }
