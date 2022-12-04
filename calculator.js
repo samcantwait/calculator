@@ -77,13 +77,13 @@ function format(num) {
     //If the number is too large, convert it to scientific notation.
     else num = num.toExponential();
     //Adjust the font size of the display so the number fits.
-    if (num.toString().replace(/[-\.]/g, '').length >= 8) display.style.fontSize = '3.5rem';
+    if (num.toString().replace(/[-\.]/g, '').length >= 8) {console.log(num.toString().replace(/[-\.]/g, '').length); display.style.fontSize = '53px';}
     return num;
 }
 
 //This function takes the current number value of a click or keypress event.
 function currentNumber(num) {
-    display.style.fontSize = '4rem'
+    display.style.fontSize = '64px'
     cleared.innerText = 'C';
     //This line resets the first operand after a calculation is performed.
     if (wasEqualed === true && !operatorValue) firstOperand = null;
@@ -101,7 +101,7 @@ function currentNumber(num) {
 
 //Add the current input to the operand unless it exceeds the size limit
 function operands(operand, value) {
-    if (operand && operand.toString().replace(/[-\.]/g, '').length >= 7) display.style.fontSize = '3.5rem';
+    if (operand && operand.toString().replace(/[-\.]/g, '').length >= 7) display.style.fontSize = '53px';
     if (operand && operand.toString().replace(/[-\.]/g, '').length >= 9) {
         console.log('should just return')
         return operand;
